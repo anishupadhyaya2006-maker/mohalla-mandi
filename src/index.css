@@ -1,13 +1,65 @@
 @import "tailwindcss";
 
+@theme {
+  --color-warm-950: #16110d;
+  --color-warm-900: #211a14;
+  --color-warm-850: #292019;
+  --color-warm-800: #352b22;
+  --color-warm-700: #483a2e;
+  --color-warm-600: #625040;
+  --color-warm-500: #816b57;
+  --color-warm-400: #a6917b;
+  --color-warm-300: #c9b7a3;
+  --color-warm-200: #e2d6c6;
+  --color-warm-100: #f2ebe1;
+  --color-warm-50: #fbf8f3;
+
+  /* Terracotta / Burnt Sienna (Warm accents & buttons) */
+  --color-terracotta-800: #6b2d12;
+  --color-terracotta-700: #8c3b17;
+  --color-terracotta-600: #ad4b20;
+  --color-terracotta-500: #c85d2e;
+  --color-terracotta-400: #dc7545;
+  --color-terracotta-300: #ea956c;
+  --color-terracotta-200: #f3ba9e;
+  --color-terracotta-100: #fadfd1;
+
+  /* Toasted Ochre / Mysore Brass / Gold (For Mohalla Mudra credits & lights) */
+  --color-ochre-800: #6b4711;
+  --color-ochre-700: #8a5e18;
+  --color-ochre-600: #ab7721;
+  --color-ochre-500: #cb922d;
+  --color-ochre-400: #dfaa43;
+  --color-ochre-300: #ecc26b;
+  --color-ochre-200: #f5dc9e;
+  --color-ochre-100: #fbedd1;
+
+  /* Roasted Kaapi Brown (Rich dark cards and depth) */
+  --color-kaapi-950: #18120d;
+  --color-kaapi-900: #241a13;
+  --color-kaapi-850: #2d2118;
+  --color-kaapi-800: #3c2c20;
+  --color-kaapi-700: #503b2c;
+  --color-kaapi-600: #674d39;
+
+  /* Sandstone & Khadi Linen (Beige & parchment highlights) */
+  --color-sand-100: #f9f5ed;
+  --color-sand-200: #f2e9dc;
+  --color-sand-300: #e5d8c3;
+  --color-sand-400: #cfbea5;
+  --color-sand-500: #b5a085;
+}
+
 @layer base {
   :root {
-    --font-heading: 'Bricolage Grotesque', sans-serif;
+    --font-heading: 'Bricolage Grotesque', serif;
     --font-body: 'Figtree', sans-serif;
   }
 
   html {
     font-family: var(--font-body);
+    background-color: #16110d;
+    color: #f7f2ea;
   }
 
   h1, h2, h3, h4, .font-display {
@@ -15,68 +67,60 @@
   }
 }
 
-/* Custom theme variables */
+/* Custom Earthy Palette for Night (Default) and Day */
 .theme-night {
-  --bg-primary: #070d18;
-  --bg-secondary: #0d172a;
-  --bg-card: #111e38;
-  --bg-card-hover: #162749;
-  --bg-card-subtle: #091224;
-  --border-subtle: #1e3156;
-  --border-strong: #2c4475;
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
-  --accent-amber: #f59e0b;
-  --accent-amber-glow: rgba(245, 158, 11, 0.3);
-  --accent-amber-light: #fef3c7;
-  --accent-jade: #10b981;
-  --accent-jade-glow: rgba(16, 185, 129, 0.25);
-  --accent-jade-dark: #064e3b;
+  --bg-primary: #16110d;
+  --bg-secondary: #211a14;
+  --bg-card: #281f18;
+  --bg-card-hover: #32271e;
+  --border-subtle: #3a2e23;
+  --border-strong: #4f3f30;
+  --text-primary: #f7f2ea;
+  --text-secondary: #d4c5b3;
+  --text-muted: #9e8c78;
+  --accent-ochre: #dfaa43;
+  --accent-terracotta: #dc7545;
+  --accent-kaapi: #2d2118;
 }
 
 .theme-day {
-  --bg-primary: #f8fafc;
-  --bg-secondary: #f1f5f9;
+  --bg-primary: #fbf8f3;
+  --bg-secondary: #f4ece0;
   --bg-card: #ffffff;
-  --bg-card-hover: #fcfdfe;
-  --bg-card-subtle: #f8fafc;
-  --border-subtle: #e2e8f0;
-  --border-strong: #cbd5e1;
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #64748b;
-  --accent-amber: #d97706;
-  --accent-amber-glow: rgba(217, 119, 6, 0.2);
-  --accent-amber-light: #fef3c7;
-  --accent-jade: #059669;
-  --accent-jade-glow: rgba(5, 150, 105, 0.2);
-  --accent-jade-dark: #ecfdf5;
+  --bg-card-hover: #faf6f0;
+  --border-subtle: #ded1be;
+  --border-strong: #c8b79e;
+  --text-primary: #211a14;
+  --text-secondary: #574636;
+  --text-muted: #826e5a;
+  --accent-ochre: #b57a1b;
+  --accent-terracotta: #b84f22;
+  --accent-kaapi: #f0e5d5;
 }
 
-/* Window glow effect */
-@keyframes windowGlow {
+/* Window filament candle/warm amber glow */
+@keyframes windowFilament {
   0%, 100% {
-    box-shadow: 0 0 10px rgba(245, 158, 11, 0.4), inset 0 0 6px rgba(251, 191, 36, 0.6);
+    box-shadow: 0 0 10px rgba(223, 170, 67, 0.45), inset 0 0 7px rgba(245, 220, 158, 0.7);
   }
   50% {
-    box-shadow: 0 0 16px rgba(245, 158, 11, 0.7), inset 0 0 9px rgba(251, 191, 36, 0.85);
+    box-shadow: 0 0 18px rgba(223, 170, 67, 0.75), inset 0 0 11px rgba(245, 220, 158, 0.9);
   }
 }
 
 .window-lit {
-  background: linear-gradient(135deg, #fef08a 0%, #f59e0b 60%, #d97706 100%);
-  animation: windowGlow 3s ease-in-out infinite;
+  background: linear-gradient(135deg, #fcedd1 0%, #dfaa43 50%, #cb922d 100%);
+  animation: windowFilament 3.2s ease-in-out infinite;
 }
 
 .window-unlit {
-  background: #0f192d;
-  opacity: 0.65;
+  background: #251d16;
+  opacity: 0.75;
 }
 
 .theme-day .window-unlit {
-  background: #cbd5e1;
-  opacity: 0.7;
+  background: #d8c8b2;
+  opacity: 0.8;
 }
 
 /* Reduced motion accessibility */
@@ -89,8 +133,8 @@
   }
 }
 
-/* Focus visibility for accessibility */
+/* Accessible focus outline in warm ochre/brass */
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
-  outline: 2px solid #f59e0b;
+  outline: 2px solid #dfaa43;
   outline-offset: 2px;
 }

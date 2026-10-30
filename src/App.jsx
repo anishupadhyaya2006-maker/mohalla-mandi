@@ -11,13 +11,13 @@ import PilotDashboard from './components/pilot/PilotDashboard';
 import AuthModal from './components/AuthModal';
 import VoucherModal from './components/VoucherModal';
 import QuickDemoBar from './components/QuickDemoBar';
-import { CheckCircle2, AlertCircle, Info, Sparkles } from 'lucide-react';
+import { Sparkles, AlertCircle, CheckCircle2, Info } from 'lucide-react';
 
 function AppContent() {
   const { activeView, toast } = useApp();
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-950 text-slate-100 transition-colors">
+    <div className="min-h-screen flex flex-col bg-[#16110d] text-[#f7f2ea] transition-colors">
       
       {/* Alliance One 2026 Competition & Demo Data Banner */}
       <DemoBanner />
@@ -42,30 +42,30 @@ function AppContent() {
       {/* Live Presentation 6-Step Pitch Walkthrough Drawer */}
       <QuickDemoBar />
 
-      {/* Floating Toast Notification */}
+      {/* Floating Toast Notification - Earthy beige & terracotta styling */}
       {toast && (
         <div
           role="status"
           aria-live="polite"
-          className="fixed top-20 right-4 z-50 max-w-sm rounded-2xl bg-slate-900 border border-slate-700 shadow-2xl p-4 flex items-center gap-3 animate-in fade-in slide-in-from-top-4 duration-300 text-left"
+          className="fixed top-20 right-4 z-50 max-w-sm rounded-2xl bg-[#241a13] border border-[#483a2e] shadow-2xl p-4 flex items-center gap-3 animate-in fade-in slide-in-from-top-4 duration-300 text-left"
         >
           {toast.type === 'success' && (
-            <div className="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center shrink-0">
-              <CheckCircle2 className="w-4 h-4" />
+            <div className="w-8 h-8 rounded-full bg-[#cb922d]/20 text-[#dfaa43] border border-[#cb922d]/40 flex items-center justify-center shrink-0">
+              <CheckCircle2 className="w-4 h-4 text-[#dfaa43]" />
             </div>
           )}
           {toast.type === 'error' && (
-            <div className="w-8 h-8 rounded-full bg-rose-500/20 text-rose-400 border border-rose-500/40 flex items-center justify-center shrink-0">
-              <AlertCircle className="w-4 h-4" />
+            <div className="w-8 h-8 rounded-full bg-[#8c3b17]/25 text-[#dc7545] border border-[#8c3b17]/50 flex items-center justify-center shrink-0">
+              <AlertCircle className="w-4 h-4 text-[#dc7545]" />
             </div>
           )}
           {toast.type === 'info' && (
-            <div className="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/40 flex items-center justify-center shrink-0">
-              <Sparkles className="w-4 h-4" />
+            <div className="w-8 h-8 rounded-full bg-[#483a2e] text-[#e2d6c6] border border-[#625040] flex items-center justify-center shrink-0">
+              <Sparkles className="w-4 h-4 text-[#ecc26b]" />
             </div>
           )}
 
-          <div className="text-xs text-slate-200 font-medium leading-snug">
+          <div className="text-xs text-[#f7f2ea] font-medium leading-snug">
             {toast.message}
           </div>
         </div>

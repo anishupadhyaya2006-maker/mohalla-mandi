@@ -163,7 +163,7 @@ export function AppProvider({ children }) {
           particleCount: 40,
           spread: 60,
           origin: { y: 0.7 },
-          colors: ['#f59e0b', '#10b981', '#fbbf24', '#34d399']
+          colors: ['#dfaa43', '#c85d2e', '#ecc26b', '#f5dc9e', '#dc7545']
         });
       }
     } catch {

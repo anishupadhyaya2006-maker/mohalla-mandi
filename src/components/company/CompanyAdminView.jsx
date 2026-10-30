@@ -106,37 +106,37 @@ export default function CompanyAdminView() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8 text-left animate-in fade-in duration-200">
       
       {/* Header */}
-      <div className="p-6 rounded-3xl bg-slate-900/90 border border-amber-500/30 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div className="p-6 rounded-3xl bg-[#241a13] border border-[#c58c2b]/40 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-xs font-mono uppercase tracking-widest text-amber-400 font-semibold flex items-center gap-1.5">
-              <Briefcase className="w-3.5 h-3.5" />
+            <span className="text-xs font-mono uppercase tracking-widest text-[#ecc26b] font-semibold flex items-center gap-1.5">
+              <Briefcase className="w-3.5 h-3.5 text-[#dfaa43]" />
               Corporate League & CSR Portal
             </span>
-            <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-300">
+            <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-[#38281b] text-[#f5dc9e] border border-[#c58c2b]/40">
               Demo Portal
             </span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-bold font-heading text-slate-100">
+          <h1 className="text-2xl sm:text-3xl font-bold font-heading text-[#f7f2ea]">
             Company Admin Dashboard
           </h1>
-          <p className="text-xs sm:text-sm text-slate-300 max-w-xl mt-1">
-            Logged in as <strong className="text-amber-300 font-semibold">{currentUser?.name}</strong> ({currentUser?.company || 'Infosys BPM & Tech'}). Create events, monitor resident turnout, and export attendance.
+          <p className="text-xs sm:text-sm text-[#cfbea5] max-w-xl mt-1">
+            Logged in as <strong className="text-[#ecc26b] font-semibold">{currentUser?.name}</strong> ({currentUser?.company || 'Infosys BPM & Tech'}). Create events, monitor resident turnout, and export attendance.
           </p>
         </div>
 
         <div className="flex items-center gap-3">
           <button
             onClick={downloadAttendanceCSV}
-            className="px-4 py-2.5 rounded-xl bg-slate-950 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-medium flex items-center gap-2 transition-colors"
+            className="px-4 py-2.5 rounded-xl bg-[#1c140d] hover:bg-[#2b2118] border border-[#3c2f24] text-[#ded3c4] text-xs font-medium flex items-center gap-2 transition-colors"
           >
-            <Download className="w-4 h-4 text-emerald-400" />
+            <Download className="w-4 h-4 text-[#dfaa43]" />
             <span>Download attendance report (CSV)</span>
           </button>
 
           <button
             onClick={() => setIsCreatingEvent(!isCreatingEvent)}
-            className="px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold flex items-center gap-1.5 shadow-md transition-all"
+            className="px-4 py-2.5 rounded-xl bg-[#c85d2e] hover:bg-[#dc7545] text-[#fbf8f3] text-xs font-bold flex items-center gap-1.5 shadow-md transition-all shrink-0"
           >
             <Plus className="w-4 h-4" />
             <span>{isCreatingEvent ? 'Cancel' : 'Create event or league'}</span>
@@ -146,17 +146,17 @@ export default function CompanyAdminView() {
 
       {/* CREATE EVENT COLLAPSIBLE FORM */}
       {isCreatingEvent && (
-        <div className="p-6 rounded-2xl bg-slate-900 border border-amber-500/40 animate-in fade-in duration-200">
+        <div className="p-6 rounded-2xl bg-[#241a13] border border-[#c58c2b]/40 animate-in fade-in duration-200">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h2 className="text-lg font-bold font-heading text-slate-100">
+              <h2 className="text-lg font-bold font-heading text-[#f7f2ea]">
                 Publish New Event or Corporate League
               </h2>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-[#a6917b]">
                 Instantly books the venue with the RWA and publishes to residents in {currentSociety}.
               </p>
             </div>
-            <span className="text-xs font-mono text-amber-300 px-2 py-0.5 rounded bg-amber-500/10">
+            <span className="text-xs font-mono text-[#ecc26b] px-2 py-0.5 rounded bg-[#38281b] border border-[#c58c2b]/30">
               Company Sponsored
             </span>
           </div>
@@ -164,7 +164,7 @@ export default function CompanyAdminView() {
           <form onSubmit={handleCreateSubmit} className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1">
+                <label className="block text-xs font-medium text-[#ded3c4] mb-1">
                   Event / League Title
                 </label>
                 <input
@@ -172,19 +172,19 @@ export default function CompanyAdminView() {
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   placeholder="e.g. Bellandur Sunset Badminton Championship"
-                  className="w-full px-3 py-2 text-xs rounded-lg bg-slate-950 border border-slate-700 text-slate-100 placeholder:text-slate-500 focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:outline-none"
+                  className="w-full px-3 py-2 text-xs rounded-lg bg-[#1a120c] border border-[#3c2f24] text-[#f7f2ea] placeholder:text-[#8e7a68] focus-visible:ring-2 focus-visible:ring-[#dfaa43] focus-visible:outline-none"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1">
+                <label className="block text-xs font-medium text-[#ded3c4] mb-1">
                   Society Venue
                 </label>
                 <select
                   value={venue}
                   onChange={(e) => setVenue(e.target.value)}
-                  className="w-full px-2.5 py-2 text-xs rounded-lg bg-slate-950 border border-slate-700 text-slate-100 focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:outline-none"
+                  className="w-full px-2.5 py-2 text-xs rounded-lg bg-[#1a120c] border border-[#3c2f24] text-[#f7f2ea] focus-visible:ring-2 focus-visible:ring-[#dfaa43] focus-visible:outline-none"
                 >
                   <option value="Clubhouse Multipurpose Hall">Clubhouse Multipurpose Hall</option>
                   <option value="Society Sports Turf & Court">Society Sports Turf & Court</option>
@@ -194,13 +194,13 @@ export default function CompanyAdminView() {
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1">
+                <label className="block text-xs font-medium text-[#ded3c4] mb-1">
                   Category
                 </label>
                 <select
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
-                  className="w-full px-2.5 py-2 text-xs rounded-lg bg-slate-950 border border-slate-700 text-slate-100 focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:outline-none"
+                  className="w-full px-2.5 py-2 text-xs rounded-lg bg-[#1a120c] border border-[#3c2f24] text-[#f7f2ea] focus-visible:ring-2 focus-visible:ring-[#dfaa43] focus-visible:outline-none"
                 >
                   <option value="Sports League">Sports League</option>
                   <option value="Wellness">Wellness & Yoga</option>
@@ -211,7 +211,7 @@ export default function CompanyAdminView() {
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1">
+                <label className="block text-xs font-medium text-[#ded3c4] mb-1">
                   Date & Time Slot
                 </label>
                 <div className="grid grid-cols-2 gap-2">
@@ -220,20 +220,20 @@ export default function CompanyAdminView() {
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
                     placeholder="Date (e.g. Sat, Nov 8)"
-                    className="w-full px-3 py-2 text-xs rounded-lg bg-slate-950 border border-slate-700 text-slate-100 focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:outline-none"
+                    className="w-full px-3 py-2 text-xs rounded-lg bg-[#1a120c] border border-[#3c2f24] text-[#f7f2ea] focus-visible:ring-2 focus-visible:ring-[#dfaa43] focus-visible:outline-none"
                   />
                   <input
                     type="text"
                     value={time}
                     onChange={(e) => setTime(e.target.value)}
                     placeholder="Time (e.g. 4:00 PM)"
-                    className="w-full px-3 py-2 text-xs rounded-lg bg-slate-950 border border-slate-700 text-slate-100 focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:outline-none"
+                    className="w-full px-3 py-2 text-xs rounded-lg bg-[#1a120c] border border-[#3c2f24] text-[#f7f2ea] focus-visible:ring-2 focus-visible:ring-[#dfaa43] focus-visible:outline-none"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1">
+                <label className="block text-xs font-medium text-[#ded3c4] mb-1">
                   Max Participant Capacity
                 </label>
                 <input
@@ -242,12 +242,12 @@ export default function CompanyAdminView() {
                   max="100"
                   value={maxSeats}
                   onChange={(e) => setMaxSeats(e.target.value)}
-                  className="w-full px-3 py-2 text-xs rounded-lg bg-slate-950 border border-slate-700 text-slate-100 focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:outline-none"
+                  className="w-full px-3 py-2 text-xs rounded-lg bg-[#1a120c] border border-[#3c2f24] text-[#f7f2ea] focus-visible:ring-2 focus-visible:ring-[#dfaa43] focus-visible:outline-none"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1">
+                <label className="block text-xs font-medium text-[#ded3c4] mb-1">
                   Mohalla Mudra Reward for Attending (MM)
                 </label>
                 <input
@@ -256,13 +256,13 @@ export default function CompanyAdminView() {
                   max="100"
                   value={creditsReward}
                   onChange={(e) => setCreditsReward(e.target.value)}
-                  className="w-full px-3 py-2 text-xs rounded-lg bg-slate-950 border border-slate-700 text-slate-100 focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:outline-none"
+                  className="w-full px-3 py-2 text-xs rounded-lg bg-[#1a120c] border border-[#3c2f24] text-[#f7f2ea] focus-visible:ring-2 focus-visible:ring-[#dfaa43] focus-visible:outline-none"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-medium text-slate-300 mb-1">
+              <label className="block text-xs font-medium text-[#ded3c4] mb-1">
                 Event Description & Objective
               </label>
               <textarea
@@ -270,7 +270,7 @@ export default function CompanyAdminView() {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="Describe the format, rules, and who should bring what..."
-                className="w-full px-3 py-2 text-xs rounded-lg bg-slate-950 border border-slate-700 text-slate-100 placeholder:text-slate-500 focus-visible:ring-2 focus-visible:ring-amber-400 focus-visible:outline-none"
+                className="w-full px-3 py-2 text-xs rounded-lg bg-[#1a120c] border border-[#3c2f24] text-[#f7f2ea] placeholder:text-[#8e7a68] focus-visible:ring-2 focus-visible:ring-[#dfaa43] focus-visible:outline-none"
               ></textarea>
             </div>
 
@@ -278,13 +278,13 @@ export default function CompanyAdminView() {
               <button
                 type="button"
                 onClick={() => setIsCreatingEvent(false)}
-                className="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium"
+                className="px-4 py-2 rounded-lg bg-[#2e2319] text-[#cfbea5] text-xs font-medium"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="px-5 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs"
+                className="px-5 py-2 rounded-lg bg-[#c85d2e] hover:bg-[#dc7545] text-[#fbf8f3] font-bold text-xs"
               >
                 Publish event
               </button>
@@ -294,24 +294,24 @@ export default function CompanyAdminView() {
       )}
 
       {/* ROSTER AND ATTENDANCE TABLE */}
-      <div className="rounded-2xl bg-slate-900/90 border border-slate-800 overflow-hidden">
-        <div className="p-4 border-b border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+      <div className="rounded-2xl bg-[#241a13] border border-[#3c2f24] overflow-hidden">
+        <div className="p-4 border-b border-[#36291e] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
-            <h2 className="text-base font-bold font-heading text-slate-100">
+            <h2 className="text-base font-bold font-heading text-[#f7f2ea]">
               Resident Registrations & Check-In Roster
             </h2>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-[#a6917b]">
               Live registration stream across your company’s sponsored society events.
             </p>
           </div>
-          <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-slate-800 text-slate-300">
+          <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-[#2e2319] text-[#c9b7a3]">
             {roster.length} Registered Residents
           </span>
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs text-slate-300">
-            <thead className="bg-slate-950 text-[11px] uppercase font-mono text-slate-400 border-b border-slate-800">
+          <table className="w-full text-left text-xs text-[#cfbea5]">
+            <thead className="bg-[#1c140d] text-[11px] uppercase font-mono text-[#8e7a68] border-b border-[#36291e]">
               <tr>
                 <th className="py-3 px-4">Resident</th>
                 <th className="py-3 px-4">Society Unit</th>
@@ -321,32 +321,32 @@ export default function CompanyAdminView() {
                 <th className="py-3 px-4 text-right">Action</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-800">
+            <tbody className="divide-y divide-[#36291e]">
               {roster.map((p) => {
                 const isCheckedIn = p.status === 'Checked in';
                 return (
-                  <tr key={p.id} className="hover:bg-slate-800/40 transition-colors">
-                    <td className="py-3.5 px-4 font-semibold text-slate-100">
+                  <tr key={p.id} className="hover:bg-[#2b2118] transition-colors">
+                    <td className="py-3.5 px-4 font-semibold text-[#f7f2ea]">
                       {p.name}
                     </td>
-                    <td className="py-3.5 px-4 text-slate-400 font-mono">
+                    <td className="py-3.5 px-4 text-[#a6917b] font-mono">
                       {p.unit}
                     </td>
-                    <td className="py-3.5 px-4 text-slate-300">
+                    <td className="py-3.5 px-4 text-[#ded3c4]">
                       {p.company}
                     </td>
-                    <td className="py-3.5 px-4 text-slate-300">
+                    <td className="py-3.5 px-4 text-[#ded3c4]">
                       {p.eventTitle}
                     </td>
                     <td className="py-3.5 px-4">
                       <span
                         className={`inline-flex items-center gap-1 text-[10px] font-mono px-2 py-0.5 rounded-full ${
                           isCheckedIn
-                            ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-semibold'
-                            : 'bg-slate-800 text-slate-400 border border-slate-700'
+                            ? 'bg-[#38281b] text-[#ecc26b] border border-[#c58c2b]/40 font-semibold'
+                            : 'bg-[#2e2319] text-[#a6917b] border border-[#483a2e]'
                         }`}
                       >
-                        {isCheckedIn && <Check className="w-3 h-3 text-emerald-400" />}
+                        {isCheckedIn && <Check className="w-3 h-3 text-[#dfaa43]" />}
                         {p.status}
                       </span>
                     </td>
@@ -355,8 +355,8 @@ export default function CompanyAdminView() {
                         onClick={() => toggleCheckIn(p.id)}
                         className={`px-3 py-1 rounded-md text-[11px] font-medium transition-colors ${
                           isCheckedIn
-                            ? 'bg-slate-800 text-slate-300 hover:text-rose-400'
-                            : 'bg-emerald-500/20 text-emerald-300 hover:bg-emerald-500/30 border border-emerald-500/30'
+                            ? 'bg-[#2e2319] text-[#c9b7a3] hover:text-[#dc7545]'
+                            : 'bg-[#38281b] text-[#ecc26b] hover:bg-[#483322] border border-[#c58c2b]/40'
                         }`}
                       >
                         {isCheckedIn ? 'Undo check-in' : 'Check in'}

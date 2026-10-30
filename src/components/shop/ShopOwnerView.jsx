@@ -59,22 +59,22 @@ export default function ShopOwnerView() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8 text-left animate-in fade-in duration-200">
       
       {/* Header */}
-      <div className="p-6 rounded-3xl bg-slate-900/90 border border-sky-500/30 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div className="p-6 rounded-3xl bg-[#241a13] border border-[#c58c2b]/40 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-xs font-mono uppercase tracking-widest text-sky-400 font-semibold flex items-center gap-1.5">
-              <Store className="w-3.5 h-3.5" />
+            <span className="text-xs font-mono uppercase tracking-widest text-[#ecc26b] font-semibold flex items-center gap-1.5">
+              <Store className="w-3.5 h-3.5 text-[#dfaa43]" />
               Hyperlocal Merchant Partner
             </span>
-            <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-sky-500/10 text-sky-300">
+            <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-[#38281b] text-[#f5dc9e] border border-[#c58c2b]/40">
               Demo Portal
             </span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-bold font-heading text-slate-100">
+          <h1 className="text-2xl sm:text-3xl font-bold font-heading text-[#f7f2ea]">
             Shop Owner Dashboard
           </h1>
-          <p className="text-xs sm:text-sm text-slate-300 max-w-xl mt-1">
-            Accepting Mohalla Mudra from residents in <strong className="text-sky-300">{currentSociety}</strong>. Reclaiming footfall from 10-minute delivery apps.
+          <p className="text-xs sm:text-sm text-[#cfbea5] max-w-xl mt-1">
+            Accepting Mohalla Mudra from residents in <strong className="text-[#ecc26b]">{currentSociety}</strong>. Reclaiming footfall from 10-minute delivery apps.
           </p>
         </div>
 
@@ -83,7 +83,7 @@ export default function ShopOwnerView() {
           <select
             value={selectedShopId}
             onChange={(e) => setSelectedShopId(e.target.value)}
-            className="px-3 py-2 text-xs rounded-xl bg-slate-950 border border-slate-700 text-slate-200 font-medium focus-visible:ring-2 focus-visible:ring-sky-400"
+            className="px-3 py-2 text-xs rounded-xl bg-[#1a120c] border border-[#3c2f24] text-[#f2ebe1] font-medium focus-visible:ring-2 focus-visible:ring-[#dfaa43]"
           >
             {shops.map(s => (
               <option key={s.id} value={s.id}>
@@ -94,7 +94,7 @@ export default function ShopOwnerView() {
 
           <button
             onClick={() => setIsAddingOffer(!isAddingOffer)}
-            className="px-4 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-bold flex items-center gap-1.5 shadow-md transition-all shrink-0"
+            className="px-4 py-2.5 rounded-xl bg-[#c85d2e] hover:bg-[#dc7545] text-[#fbf8f3] text-xs font-bold flex items-center gap-1.5 shadow-md transition-all shrink-0"
           >
             <Plus className="w-4 h-4" />
             <span>{isAddingOffer ? 'Cancel' : 'Add an offer'}</span>
@@ -106,65 +106,65 @@ export default function ShopOwnerView() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
         
         {/* Metric 1: Credits Redeemed Today */}
-        <div className="p-5 rounded-2xl bg-slate-900/90 border border-slate-800">
+        <div className="p-5 rounded-2xl bg-[#241a13] border border-[#3c2f24]">
           <div className="flex items-center justify-between">
-            <span className="text-xs text-slate-400 font-mono uppercase">
+            <span className="text-xs text-[#8e7a68] font-mono uppercase">
               Credits Redeemed Today
             </span>
-            <Coins className="w-4 h-4 text-emerald-400" />
+            <Coins className="w-4 h-4 text-[#dfaa43]" />
           </div>
           <div className="mt-3 flex items-baseline gap-2">
-            <span className="text-3xl font-extrabold font-heading text-emerald-400">
+            <span className="text-3xl font-extrabold font-heading text-[#f5dc9e]">
               {totalRedeemedCredits || 185}
             </span>
-            <span className="text-xs font-mono text-emerald-300">MM</span>
+            <span className="text-xs font-mono text-[#ecc26b]">MM</span>
           </div>
-          <div className="mt-1 text-[11px] text-slate-400 font-mono">
+          <div className="mt-1 text-[11px] text-[#a6917b] font-mono">
             ≈ ₹{(totalRedeemedCredits || 185) * 10} reimbursement from sponsor pool
           </div>
         </div>
 
         {/* Metric 2: Today's Society Customer Footfall */}
-        <div className="p-5 rounded-2xl bg-slate-900/90 border border-slate-800">
+        <div className="p-5 rounded-2xl bg-[#241a13] border border-[#3c2f24]">
           <div className="flex items-center justify-between">
-            <span className="text-xs text-slate-400 font-mono uppercase">
+            <span className="text-xs text-[#8e7a68] font-mono uppercase">
               Society Footfall Today
             </span>
-            <Users className="w-4 h-4 text-sky-400" />
+            <Users className="w-4 h-4 text-[#dc7545]" />
           </div>
           <div className="mt-3 flex items-baseline gap-2">
-            <span className="text-3xl font-extrabold font-heading text-sky-400">
+            <span className="text-3xl font-extrabold font-heading text-[#f2ebe1]">
               {shopSpecificRedemptions.length || 18}
             </span>
-            <span className="text-xs font-mono text-slate-400">residents</span>
+            <span className="text-xs font-mono text-[#a6917b]">residents</span>
           </div>
-          <div className="mt-1 text-[11px] text-slate-400 font-mono">
+          <div className="mt-1 text-[11px] text-[#a6917b] font-mono">
             +42% increase compared to non-event days
           </div>
         </div>
 
         {/* Metric 3: New vs Repeat Customers Breakdown */}
-        <div className="p-5 rounded-2xl bg-slate-900/90 border border-slate-800">
+        <div className="p-5 rounded-2xl bg-[#241a13] border border-[#3c2f24]">
           <div className="flex items-center justify-between">
-            <span className="text-xs text-slate-400 font-mono uppercase">
+            <span className="text-xs text-[#8e7a68] font-mono uppercase">
               New vs Repeat Customers
             </span>
-            <Percent className="w-4 h-4 text-amber-400" />
+            <Percent className="w-4 h-4 text-[#dfaa43]" />
           </div>
           <div className="mt-3 flex items-baseline gap-2">
-            <span className="text-3xl font-extrabold font-heading text-amber-300">
+            <span className="text-3xl font-extrabold font-heading text-[#ecc26b]">
               {repeatPercent}%
             </span>
-            <span className="text-xs font-mono text-slate-400">repeat loyalty</span>
+            <span className="text-xs font-mono text-[#a6917b]">repeat loyalty</span>
           </div>
-          {/* Visual Bar */}
-          <div className="mt-2 w-full h-2 rounded-full bg-slate-800 flex overflow-hidden">
-            <div className="bg-amber-400 h-full" style={{ width: `${repeatPercent}%` }} title="Repeat customers"></div>
-            <div className="bg-sky-400 h-full" style={{ width: `${newPercent}%` }} title="New customers"></div>
+          {/* Visual Bar (Ochre vs Kaapi Wood) */}
+          <div className="mt-2 w-full h-2 rounded-full bg-[#1c140d] flex overflow-hidden">
+            <div className="bg-[#dfaa43] h-full" style={{ width: `${repeatPercent}%` }} title="Repeat customers"></div>
+            <div className="bg-[#503b2c] h-full" style={{ width: `${newPercent}%` }} title="New customers"></div>
           </div>
-          <div className="mt-1 flex justify-between text-[10px] text-slate-400 font-mono">
-            <span className="text-amber-300">● {repeatPercent}% Repeat</span>
-            <span className="text-sky-300">● {newPercent}% First-time</span>
+          <div className="mt-1 flex justify-between text-[10px] text-[#8e7a68] font-mono">
+            <span className="text-[#ecc26b]">● {repeatPercent}% Repeat</span>
+            <span className="text-[#c9b7a3]">● {newPercent}% First-time</span>
           </div>
         </div>
 
@@ -172,17 +172,17 @@ export default function ShopOwnerView() {
 
       {/* ADD OFFER FORM COLLAPSIBLE */}
       {isAddingOffer && (
-        <div className="p-6 rounded-2xl bg-slate-900 border border-sky-500/40 animate-in fade-in duration-200">
+        <div className="p-6 rounded-2xl bg-[#241a13] border border-[#c58c2b]/40 animate-in fade-in duration-200">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h2 className="text-lg font-bold font-heading text-slate-100">
+              <h2 className="text-lg font-bold font-heading text-[#f7f2ea]">
                 Add an Offer for {activeShop.name}
               </h2>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-[#a6917b]">
                 Create a special discount or combo redeemable with Mohalla Mudra.
               </p>
             </div>
-            <span className="text-xs font-mono text-sky-300 px-2 py-0.5 rounded bg-sky-500/10">
+            <span className="text-xs font-mono text-[#ecc26b] px-2 py-0.5 rounded bg-[#38281b] border border-[#c58c2b]/30">
               Immediate Live Listing
             </span>
           </div>
@@ -190,7 +190,7 @@ export default function ShopOwnerView() {
           <form onSubmit={handleOfferSubmit} className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1">
+                <label className="block text-xs font-medium text-[#ded3c4] mb-1">
                   Offer Title
                 </label>
                 <input
@@ -198,13 +198,13 @@ export default function ShopOwnerView() {
                   value={offerTitle}
                   onChange={(e) => setOfferTitle(e.target.value)}
                   placeholder="e.g. 1 Free Mysore Filter Kaapi with Rava Idli"
-                  className="w-full px-3 py-2 text-xs rounded-lg bg-slate-950 border border-slate-700 text-slate-100 placeholder:text-slate-500 focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:outline-none"
+                  className="w-full px-3 py-2 text-xs rounded-lg bg-[#1a120c] border border-[#3c2f24] text-[#f7f2ea] placeholder:text-[#8e7a68] focus-visible:ring-2 focus-visible:ring-[#dfaa43] focus-visible:outline-none"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1">
+                <label className="block text-xs font-medium text-[#ded3c4] mb-1">
                   Redemption Cost (in Mohalla Mudra MM)
                 </label>
                 <input
@@ -213,13 +213,13 @@ export default function ShopOwnerView() {
                   max="100"
                   value={redeemCost}
                   onChange={(e) => setRedeemCost(e.target.value)}
-                  className="w-full px-3 py-2 text-xs rounded-lg bg-slate-950 border border-slate-700 text-slate-100 focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:outline-none"
+                  className="w-full px-3 py-2 text-xs rounded-lg bg-[#1a120c] border border-[#3c2f24] text-[#f7f2ea] focus-visible:ring-2 focus-visible:ring-[#dfaa43] focus-visible:outline-none"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1">
+                <label className="block text-xs font-medium text-[#ded3c4] mb-1">
                   Equivalent Retail Value (₹)
                 </label>
                 <input
@@ -228,12 +228,12 @@ export default function ShopOwnerView() {
                   max="500"
                   value={retailPrice}
                   onChange={(e) => setRetailPrice(e.target.value)}
-                  className="w-full px-3 py-2 text-xs rounded-lg bg-slate-950 border border-slate-700 text-slate-100 focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:outline-none"
+                  className="w-full px-3 py-2 text-xs rounded-lg bg-[#1a120c] border border-[#3c2f24] text-[#f7f2ea] focus-visible:ring-2 focus-visible:ring-[#dfaa43] focus-visible:outline-none"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-slate-300 mb-1">
+                <label className="block text-xs font-medium text-[#ded3c4] mb-1">
                   Terms & Conditions Note
                 </label>
                 <input
@@ -241,7 +241,7 @@ export default function ShopOwnerView() {
                   value={offerDetail}
                   onChange={(e) => setOfferDetail(e.target.value)}
                   placeholder="e.g. Valid daily 7:00 AM – 11:30 AM at counter."
-                  className="w-full px-3 py-2 text-xs rounded-lg bg-slate-950 border border-slate-700 text-slate-100 placeholder:text-slate-500 focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:outline-none"
+                  className="w-full px-3 py-2 text-xs rounded-lg bg-[#1a120c] border border-[#3c2f24] text-[#f7f2ea] placeholder:text-[#8e7a68] focus-visible:ring-2 focus-visible:ring-[#dfaa43] focus-visible:outline-none"
                 />
               </div>
             </div>
@@ -250,13 +250,13 @@ export default function ShopOwnerView() {
               <button
                 type="button"
                 onClick={() => setIsAddingOffer(false)}
-                className="px-4 py-2 rounded-lg bg-slate-800 text-slate-300 text-xs font-medium"
+                className="px-4 py-2 rounded-lg bg-[#2e2319] text-[#cfbea5] text-xs font-medium"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="px-5 py-2 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs"
+                className="px-5 py-2 rounded-lg bg-[#c85d2e] hover:bg-[#dc7545] text-[#fbf8f3] font-bold text-xs"
               >
                 Publish offer to residents
               </button>
@@ -266,24 +266,24 @@ export default function ShopOwnerView() {
       )}
 
       {/* LIVE REDEMPTIONS LOG */}
-      <div className="rounded-2xl bg-slate-900/90 border border-slate-800 overflow-hidden">
-        <div className="p-4 border-b border-slate-800 flex items-center justify-between">
+      <div className="rounded-2xl bg-[#241a13] border border-[#3c2f24] overflow-hidden">
+        <div className="p-4 border-b border-[#36291e] flex items-center justify-between">
           <div>
-            <h2 className="text-base font-bold font-heading text-slate-100">
+            <h2 className="text-base font-bold font-heading text-[#f7f2ea]">
               Live Mudra Redemptions at {activeShop.name}
             </h2>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-[#a6917b]">
               Vouchers scanned and approved today at your register.
             </p>
           </div>
-          <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-slate-800 text-slate-300">
+          <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-[#2e2319] text-[#c9b7a3]">
             Real-time Feed (Demo data)
           </span>
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs text-slate-300">
-            <thead className="bg-slate-950 text-[11px] uppercase font-mono text-slate-400 border-b border-slate-800">
+          <table className="w-full text-left text-xs text-[#cfbea5]">
+            <thead className="bg-[#1c140d] text-[11px] uppercase font-mono text-[#8e7a68] border-b border-[#36291e]">
               <tr>
                 <th className="py-3 px-4">Resident Customer</th>
                 <th className="py-3 px-4">Society Unit</th>
@@ -293,33 +293,33 @@ export default function ShopOwnerView() {
                 <th className="py-3 px-4 text-right">Time</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-800">
+            <tbody className="divide-y divide-[#36291e]">
               {shopSpecificRedemptions.map((red) => (
-                <tr key={red.id} className="hover:bg-slate-800/40 transition-colors">
-                  <td className="py-3.5 px-4 font-semibold text-slate-100">
+                <tr key={red.id} className="hover:bg-[#2b2118] transition-colors">
+                  <td className="py-3.5 px-4 font-semibold text-[#f7f2ea]">
                     {red.customerName}
                   </td>
-                  <td className="py-3.5 px-4 text-slate-400 font-mono">
+                  <td className="py-3.5 px-4 text-[#a6917b] font-mono">
                     {red.society || 'Sobha Carnation, Flat 402'}
                   </td>
-                  <td className="py-3.5 px-4 text-slate-300">
+                  <td className="py-3.5 px-4 text-[#ded3c4]">
                     {red.itemName}
                   </td>
                   <td className="py-3.5 px-4">
                     <span
                       className={`text-[10px] font-mono px-2 py-0.5 rounded-full ${
                         red.type === 'repeat'
-                          ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30'
-                          : 'bg-sky-500/20 text-sky-300 border border-sky-500/30'
+                          ? 'bg-[#38281b] text-[#ecc26b] border border-[#c58c2b]/40'
+                          : 'bg-[#2e2319] text-[#c9b7a3] border border-[#483a2e]'
                       }`}
                     >
                       {red.type === 'repeat' ? 'Repeat Neighbor' : 'First-Time'}
                     </span>
                   </td>
-                  <td className="py-3.5 px-4 font-mono font-bold text-emerald-400">
+                  <td className="py-3.5 px-4 font-mono font-bold text-[#f5dc9e]">
                     +{red.credits} MM
                   </td>
-                  <td className="py-3.5 px-4 text-right text-slate-400 font-mono text-[11px]">
+                  <td className="py-3.5 px-4 text-right text-[#8e7a68] font-mono text-[11px]">
                     {red.timestamp}
                   </td>
                 </tr>
