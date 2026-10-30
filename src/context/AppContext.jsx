@@ -16,7 +16,7 @@ import {
 const AppContext = createContext();
 
 const STORAGE_KEYS = {
-  THEME: 'mm_theme_v1',
+  THEME: 'mm_theme_v2',
   CURRENT_USER: 'mm_current_user_v1',
   ALL_USERS: 'mm_all_users_v1',
   EVENTS: 'mm_events_v1',
@@ -50,8 +50,12 @@ function setStorage(key, value) {
 }
 
 export function AppProvider({ children }) {
-  // Theme state: night (default) or day
-  const [theme, setTheme] = useState(() => getStorage(STORAGE_KEYS.THEME, 'night'));
+  // Theme state: day (default light theme in khadi beige & biscuit cream) or night
+  const [theme, setTheme] = useState(() => {
+    const saved = getStorage(STORAGE_KEYS.THEME, null);
+    if (saved === 'day' || saved === 'night') return saved;
+    return 'day';
+  });
 
   // Users & Active User
   const [users, setUsers] = useState(() => getStorage(STORAGE_KEYS.ALL_USERS, INITIAL_DEMO_USERS));

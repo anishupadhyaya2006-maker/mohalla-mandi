@@ -79,9 +79,9 @@ export default function AuthModal() {
           setErrorMsg('');
         }
       }}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#140e0a]/85 backdrop-blur-sm animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#211710]/60 dark:bg-[#140e0a]/85 backdrop-blur-sm animate-in fade-in duration-200"
     >
-      <div className="relative w-full max-w-md rounded-2xl bg-[#211a14] border border-[#483a2e] shadow-2xl p-6 sm:p-7 text-left">
+      <div className="relative w-full max-w-md rounded-2xl bg-white dark:bg-[#211a14] border border-[#ded1be] dark:border-[#483a2e] shadow-2xl p-6 sm:p-7 text-left">
         
         {/* Close Button */}
         <button
@@ -90,7 +90,7 @@ export default function AuthModal() {
             setIsAuthModalOpen(false);
             setErrorMsg('');
           }}
-          className="absolute top-4 right-4 p-1.5 rounded-lg text-[#a6917b] hover:text-[#f7f2ea] hover:bg-[#2e2319] transition-colors"
+          className="absolute top-4 right-4 p-1.5 rounded-lg text-[#725e4c] dark:text-[#a6917b] hover:text-[#211710] dark:hover:text-[#f7f2ea] hover:bg-[#f6efe3] dark:hover:bg-[#2e2319] transition-colors"
           aria-label="Close authentication modal"
         >
           <X className="w-5 h-5" />
@@ -99,15 +99,15 @@ export default function AuthModal() {
         {/* Modal Header */}
         <div className="mb-5">
           <div className="flex items-center gap-2 mb-2">
-            <span className="w-2 h-2 rounded-full bg-[#dfaa43]"></span>
-            <span className="text-[11px] font-mono uppercase tracking-wider text-[#ecc26b]">
+            <span className="w-2 h-2 rounded-full bg-[#cb922d] dark:bg-[#dfaa43]"></span>
+            <span className="text-[11px] font-mono uppercase tracking-wider text-[#8a5e18] dark:text-[#ecc26b] font-semibold">
               Mohalla Mandi Bangalore
             </span>
           </div>
-          <h3 className="text-xl font-bold font-heading text-[#f7f2ea]">
+          <h3 className="text-xl font-bold font-heading text-[#211710] dark:text-[#f7f2ea]">
             {authMode === 'signup' ? 'Create Resident Account' : 'Log In to Society Portal'}
           </h3>
-          <p className="text-xs text-[#a6917b] mt-1">
+          <p className="text-xs text-[#725e4c] dark:text-[#a6917b] mt-1">
             {authMode === 'signup'
               ? 'Join free. New residents start with 30 Mohalla Mudra credits.'
               : 'Access your society events, wallet, and company league.'}
@@ -116,8 +116,8 @@ export default function AuthModal() {
 
         {/* Bonus Callout for Signup (Ochre / Brass) */}
         {authMode === 'signup' && (
-          <div className="mb-4 p-3 rounded-xl bg-[#38281b] border border-[#c58c2b]/40 flex items-center gap-2.5 text-xs text-[#f5dc9e]">
-            <Sparkles className="w-4 h-4 text-[#dfaa43] shrink-0" />
+          <div className="mb-4 p-3 rounded-xl bg-[#fbf4e8] dark:bg-[#38281b] border border-[#d6be96] dark:border-[#c58c2b]/40 flex items-center gap-2.5 text-xs text-[#704910] dark:text-[#f5dc9e] shadow-sm">
+            <Sparkles className="w-4 h-4 text-[#b57a1b] dark:text-[#dfaa43] shrink-0" />
             <span>
               <strong>Alliance One 2026 Bonus:</strong> 30 Mohalla Mudra credited immediately to spend at local shops!
             </span>
@@ -126,8 +126,8 @@ export default function AuthModal() {
 
         {/* Error Alert (Warm Burnt Sienna, not red) */}
         {errorMsg && (
-          <div className="mb-4 p-3 rounded-xl bg-[#3d2316] border border-[#c85d2e]/50 flex items-center gap-2 text-xs text-[#f3ba9e]">
-            <AlertCircle className="w-4 h-4 text-[#dc7545] shrink-0" />
+          <div className="mb-4 p-3 rounded-xl bg-[#fbf0eb] dark:bg-[#3d2316] border border-[#c85d2e]/40 flex items-center gap-2 text-xs text-[#b84f22] dark:text-[#f3ba9e]">
+            <AlertCircle className="w-4 h-4 text-[#c85d2e] dark:text-[#dc7545] shrink-0" />
             <span>{errorMsg}</span>
           </div>
         )}
@@ -136,7 +136,7 @@ export default function AuthModal() {
         <form onSubmit={handleSubmit} className="space-y-3.5">
           {authMode === 'signup' && (
             <div>
-              <label className="block text-xs font-medium text-[#ded3c4] mb-1">
+              <label className="block text-xs font-medium text-[#574332] dark:text-[#ded3c4] mb-1">
                 Full Name
               </label>
               <input
@@ -144,14 +144,14 @@ export default function AuthModal() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="e.g. Tanvi Deshmukh"
-                className="w-full px-3 py-2 text-xs rounded-lg bg-[#1a120c] border border-[#3c2f24] text-[#f7f2ea] placeholder:text-[#8e7a68] focus-visible:ring-2 focus-visible:ring-[#dfaa43] focus-visible:outline-none"
+                className="w-full px-3 py-2 text-xs rounded-lg bg-[#f8f3eb] dark:bg-[#1a120c] border border-[#ded1be] dark:border-[#3c2f24] text-[#211710] dark:text-[#f7f2ea] placeholder:text-[#826e5a] focus-visible:ring-2 focus-visible:ring-[#cb922d] focus-visible:outline-none"
                 required
               />
             </div>
           )}
 
           <div>
-            <label className="block text-xs font-medium text-[#ded3c4] mb-1">
+            <label className="block text-xs font-medium text-[#574332] dark:text-[#ded3c4] mb-1">
               Email Address
             </label>
             <input
@@ -159,13 +159,13 @@ export default function AuthModal() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="e.g. tanvi@flipkart.com"
-              className="w-full px-3 py-2 text-xs rounded-lg bg-[#1a120c] border border-[#3c2f24] text-[#f7f2ea] placeholder:text-[#8e7a68] focus-visible:ring-2 focus-visible:ring-[#dfaa43] focus-visible:outline-none"
+              className="w-full px-3 py-2 text-xs rounded-lg bg-[#f8f3eb] dark:bg-[#1a120c] border border-[#ded1be] dark:border-[#3c2f24] text-[#211710] dark:text-[#f7f2ea] placeholder:text-[#826e5a] focus-visible:ring-2 focus-visible:ring-[#cb922d] focus-visible:outline-none"
               required
             />
           </div>
 
           <div>
-            <label className="block text-xs font-medium text-[#ded3c4] mb-1">
+            <label className="block text-xs font-medium text-[#574332] dark:text-[#ded3c4] mb-1">
               Password
             </label>
             <input
@@ -173,7 +173,7 @@ export default function AuthModal() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••"
-              className="w-full px-3 py-2 text-xs rounded-lg bg-[#1a120c] border border-[#3c2f24] text-[#f7f2ea] placeholder:text-[#8e7a68] focus-visible:ring-2 focus-visible:ring-[#dfaa43] focus-visible:outline-none"
+              className="w-full px-3 py-2 text-xs rounded-lg bg-[#f8f3eb] dark:bg-[#1a120c] border border-[#ded1be] dark:border-[#3c2f24] text-[#211710] dark:text-[#f7f2ea] placeholder:text-[#826e5a] focus-visible:ring-2 focus-visible:ring-[#cb922d] focus-visible:outline-none"
               required
             />
           </div>
@@ -182,13 +182,13 @@ export default function AuthModal() {
             <>
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-medium text-[#ded3c4] mb-1">
+                  <label className="block text-xs font-medium text-[#574332] dark:text-[#ded3c4] mb-1">
                     Apartment Society
                   </label>
                   <select
                     value={society}
                     onChange={(e) => setSociety(e.target.value)}
-                    className="w-full px-2.5 py-2 text-xs rounded-lg bg-[#1a120c] border border-[#3c2f24] text-[#f7f2ea] focus-visible:ring-2 focus-visible:ring-[#dfaa43] focus-visible:outline-none"
+                    className="w-full px-2.5 py-2 text-xs rounded-lg bg-[#f8f3eb] dark:bg-[#1a120c] border border-[#ded1be] dark:border-[#3c2f24] text-[#211710] dark:text-[#f7f2ea] focus-visible:ring-2 focus-visible:ring-[#cb922d] focus-visible:outline-none"
                   >
                     {DEMO_SOCIETIES.map((s) => (
                       <option key={s.id} value={s.name}>
@@ -199,7 +199,7 @@ export default function AuthModal() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-[#ded3c4] mb-1">
+                  <label className="block text-xs font-medium text-[#574332] dark:text-[#ded3c4] mb-1">
                     Flat / Unit
                   </label>
                   <input
@@ -207,19 +207,19 @@ export default function AuthModal() {
                     value={flatNumber}
                     onChange={(e) => setFlatNumber(e.target.value)}
                     placeholder="e.g. B-404"
-                    className="w-full px-3 py-2 text-xs rounded-lg bg-[#1a120c] border border-[#3c2f24] text-[#f7f2ea] placeholder:text-[#8e7a68] focus-visible:ring-2 focus-visible:ring-[#dfaa43] focus-visible:outline-none"
+                    className="w-full px-3 py-2 text-xs rounded-lg bg-[#f8f3eb] dark:bg-[#1a120c] border border-[#ded1be] dark:border-[#3c2f24] text-[#211710] dark:text-[#f7f2ea] placeholder:text-[#826e5a] focus-visible:ring-2 focus-visible:ring-[#cb922d] focus-visible:outline-none"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-[#ded3c4] mb-1">
+                <label className="block text-xs font-medium text-[#574332] dark:text-[#ded3c4] mb-1">
                   Company / Employer (for Inter-Company League)
                 </label>
                 <select
                   value={company}
                   onChange={(e) => setCompany(e.target.value)}
-                  className="w-full px-2.5 py-2 text-xs rounded-lg bg-[#1a120c] border border-[#3c2f24] text-[#f7f2ea] focus-visible:ring-2 focus-visible:ring-[#dfaa43] focus-visible:outline-none"
+                  className="w-full px-2.5 py-2 text-xs rounded-lg bg-[#f8f3eb] dark:bg-[#1a120c] border border-[#ded1be] dark:border-[#3c2f24] text-[#211710] dark:text-[#f7f2ea] focus-visible:ring-2 focus-visible:ring-[#cb922d] focus-visible:outline-none"
                 >
                   {DEMO_COMPANIES.map((c) => (
                     <option key={c} value={c}>
@@ -233,7 +233,7 @@ export default function AuthModal() {
 
           <button
             type="submit"
-            className="w-full py-2.5 px-4 rounded-xl bg-[#c85d2e] hover:bg-[#dc7545] text-[#fbf8f3] font-bold text-xs flex items-center justify-center gap-2 shadow-lg transition-all"
+            className="w-full py-2.5 px-4 rounded-xl bg-[#c85d2e] hover:bg-[#b84f22] text-[#fbf8f3] font-bold text-xs flex items-center justify-center gap-2 shadow-md transition-all"
           >
             {authMode === 'signup' ? (
               <>
@@ -250,9 +250,9 @@ export default function AuthModal() {
         </form>
 
         {/* Toggle Login / Signup Mode */}
-        <div className="mt-4 pt-3 border-t border-[#36291e] text-center">
+        <div className="mt-4 pt-3 border-t border-[#ded1be] dark:border-[#36291e] text-center">
           {authMode === 'signup' ? (
-            <p className="text-xs text-[#a6917b]">
+            <p className="text-xs text-[#725e4c] dark:text-[#a6917b]">
               Already registered?{' '}
               <button
                 type="button"
@@ -260,13 +260,13 @@ export default function AuthModal() {
                   setAuthMode('login');
                   setErrorMsg('');
                 }}
-                className="text-[#ecc26b] hover:underline font-semibold"
+                className="text-[#8a5e18] dark:text-[#ecc26b] hover:underline font-bold"
               >
                 Log in here
               </button>
             </p>
           ) : (
-            <p className="text-xs text-[#a6917b]">
+            <p className="text-xs text-[#725e4c] dark:text-[#a6917b]">
               New resident?{' '}
               <button
                 type="button"
@@ -274,7 +274,7 @@ export default function AuthModal() {
                   setAuthMode('signup');
                   setErrorMsg('');
                 }}
-                className="text-[#ecc26b] hover:underline font-semibold"
+                className="text-[#8a5e18] dark:text-[#ecc26b] hover:underline font-bold"
               >
                 Sign up free (+30 MM)
               </button>
@@ -283,8 +283,8 @@ export default function AuthModal() {
         </div>
 
         {/* Quick Demo Sign-in Strip for Evaluators */}
-        <div className="mt-4 pt-3 border-t border-[#36291e]">
-          <p className="text-[10px] uppercase font-mono text-[#8e7a68] mb-2">
+        <div className="mt-4 pt-3 border-t border-[#ded1be] dark:border-[#36291e]">
+          <p className="text-[10px] uppercase font-mono text-[#725e4c] dark:text-[#8e7a68] mb-2 font-bold">
             One-Click Evaluator Fast Login
           </p>
           <div className="grid grid-cols-2 gap-2 text-left">
@@ -294,10 +294,10 @@ export default function AuthModal() {
                 switchPersona('resident');
                 setIsAuthModalOpen(false);
               }}
-              className="p-2 rounded-lg bg-[#1a120c] hover:bg-[#2e2319] border border-[#3c2f24] text-[11px] text-[#cfbea5] transition-colors"
+              className="p-2 rounded-lg bg-[#f8f3eb] dark:bg-[#1a120c] hover:bg-[#f2e7d7] dark:hover:bg-[#2e2319] border border-[#ded1be] dark:border-[#3c2f24] text-[11px] text-[#574332] dark:text-[#cfbea5] transition-colors"
             >
-              <div className="font-semibold text-[#f5dc9e]">Ananya (Resident)</div>
-              <div className="text-[10px] text-[#8e7a68]">Flipkart · 65 MM</div>
+              <div className="font-bold text-[#8a5e18] dark:text-[#f5dc9e]">Ananya (Resident)</div>
+              <div className="text-[10px] text-[#725e4c] dark:text-[#8e7a68]">Flipkart · 65 MM</div>
             </button>
             <button
               type="button"
@@ -305,10 +305,10 @@ export default function AuthModal() {
                 switchPersona('company_admin');
                 setIsAuthModalOpen(false);
               }}
-              className="p-2 rounded-lg bg-[#1a120c] hover:bg-[#2e2319] border border-[#3c2f24] text-[11px] text-[#cfbea5] transition-colors"
+              className="p-2 rounded-lg bg-[#f8f3eb] dark:bg-[#1a120c] hover:bg-[#f2e7d7] dark:hover:bg-[#2e2319] border border-[#ded1be] dark:border-[#3c2f24] text-[11px] text-[#574332] dark:text-[#cfbea5] transition-colors"
             >
-              <div className="font-semibold text-[#f3ba9e]">Vikram (Company)</div>
-              <div className="text-[10px] text-[#8e7a68]">Infosys BPM Lead</div>
+              <div className="font-bold text-[#c85d2e] dark:text-[#f3ba9e]">Vikram (Company)</div>
+              <div className="text-[10px] text-[#725e4c] dark:text-[#8e7a68]">Infosys BPM Lead</div>
             </button>
           </div>
         </div>
