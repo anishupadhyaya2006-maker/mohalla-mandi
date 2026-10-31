@@ -16,7 +16,7 @@ import {
 const AppContext = createContext();
 
 const STORAGE_KEYS = {
-  THEME: 'mm_theme_v2',
+  THEME: 'mm_theme_v3',
   CURRENT_USER: 'mm_current_user_v1',
   ALL_USERS: 'mm_all_users_v1',
   EVENTS: 'mm_events_v1',
@@ -50,11 +50,11 @@ function setStorage(key, value) {
 }
 
 export function AppProvider({ children }) {
-  // Theme state: day (default light theme in khadi beige & biscuit cream) or night
+  // Theme state: night (default dark mode: Deep Dark Brown, Rich Beige, Ivory Old, Electric Atlassian) or day
   const [theme, setTheme] = useState(() => {
     const saved = getStorage(STORAGE_KEYS.THEME, null);
     if (saved === 'day' || saved === 'night') return saved;
-    return 'day';
+    return 'night';
   });
 
   // Users & Active User
@@ -167,7 +167,7 @@ export function AppProvider({ children }) {
           particleCount: 40,
           spread: 60,
           origin: { y: 0.7 },
-          colors: ['#dfaa43', '#c85d2e', '#ecc26b', '#f5dc9e', '#dc7545']
+          colors: ['#0052cc', '#0747a6', '#2684ff', '#faf6ee', '#e8ded0', '#23150d']
         });
       }
     } catch {
@@ -219,7 +219,7 @@ export function AppProvider({ children }) {
     const welcomeTx = {
       id: `tx-${Date.now()}`,
       type: 'earned',
-      title: 'Welcome Grant: Joined Mohalla Mandi',
+      title: 'Welcome Grant: Joined Mohalla Mitra',
       amount: 30,
       date: 'Just now',
       partner: 'Alliance One 2026 Welcome Pool',
@@ -537,7 +537,7 @@ export function AppProvider({ children }) {
     };
 
     setShops(prev => [newOffer, ...prev]);
-    showToast(`New offer "${newOffer.offerTitle}" added to Mohalla Mandi!`, 'success');
+    showToast(`New offer "${newOffer.offerTitle}" added to Mohalla Mitra!`, 'success');
   };
 
   // Interactive apartment window toggle

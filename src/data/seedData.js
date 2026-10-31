@@ -1,4 +1,4 @@
-// Seed data for Mohalla Mandi - Alliance One 2026: Chaturanga Competition Prototype
+// Seed data for Mohalla Mitra - Alliance One 2026: Chaturanga Competition Prototype
 // All numbers, names, events and metrics are simulated DEMO DATA for Bengaluru apartment societies.
 
 export const DEMO_SOCIETIES = [
@@ -285,7 +285,7 @@ export const INITIAL_WALLET_TRANSACTIONS = [
     title: 'Welcome Grant: Alliance One Chaturanga Pilot',
     amount: 30,
     date: 'Oct 26, 11:00 AM',
-    partner: 'Mohalla Mandi Community Pool',
+    partner: 'Mohalla Mitra Community Pool',
     badge: 'Welcome Bonus'
   },
 ];

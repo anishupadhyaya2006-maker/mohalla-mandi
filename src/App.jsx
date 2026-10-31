@@ -17,7 +17,7 @@ function AppContent() {
   const { activeView, toast } = useApp();
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#fbf8f4] dark:bg-[#16110d] text-[#211710] dark:text-[#f7f2ea] transition-colors">
+    <div className="min-h-screen flex flex-col bg-[#faf6ee] dark:bg-[#160e09] text-[#23150d] dark:text-[#faf6ee] transition-colors">
       
       {/* Alliance One 2026 Competition & Demo Data Banner */}
       <DemoBanner />
@@ -42,30 +42,30 @@ function AppContent() {
       {/* Live Presentation 6-Step Pitch Walkthrough Drawer */}
       <QuickDemoBar />
 
-      {/* Floating Toast Notification - Earthy beige & terracotta styling */}
+      {/* Floating Toast Notification - Ivory, Beige & Deep Atlassian styling */}
       {toast && (
         <div
           role="status"
           aria-live="polite"
-          className="fixed top-20 right-4 z-50 max-w-sm rounded-2xl bg-white dark:bg-[#241a13] border border-[#ded1be] dark:border-[#483a2e] shadow-xl p-4 flex items-center gap-3 animate-in fade-in slide-in-from-top-4 duration-300 text-left"
+          className="fixed top-20 right-4 z-50 max-w-sm rounded-2xl bg-white dark:bg-[#221610] border border-[#ddd0be] dark:border-[#38251a] shadow-xl p-4 flex items-center gap-3 animate-in fade-in slide-in-from-top-4 duration-300 text-left"
         >
           {toast.type === 'success' && (
-            <div className="w-8 h-8 rounded-full bg-[#ede3d1] dark:bg-[#cb922d]/20 text-[#8a5e18] dark:text-[#dfaa43] border border-[#d6be96] dark:border-[#cb922d]/40 flex items-center justify-center shrink-0">
-              <CheckCircle2 className="w-4 h-4 text-[#8a5e18] dark:text-[#dfaa43]" />
+            <div className="w-8 h-8 rounded-full bg-[#deebff] dark:bg-[#0c2340] text-[#0747a6] dark:text-[#2684ff] border border-[#b3d4ff] dark:border-[#0052cc]/40 flex items-center justify-center shrink-0">
+              <CheckCircle2 className="w-4 h-4 text-[#0747a6] dark:text-[#2684ff]" />
             </div>
           )}
           {toast.type === 'error' && (
-            <div className="w-8 h-8 rounded-full bg-[#faede6] dark:bg-[#8c3b17]/25 text-[#b84f22] dark:text-[#dc7545] border border-[#e8c6b5] dark:border-[#8c3b17]/50 flex items-center justify-center shrink-0">
-              <AlertCircle className="w-4 h-4 text-[#b84f22] dark:text-[#dc7545]" />
+            <div className="w-8 h-8 rounded-full bg-[#faede6] dark:bg-[#381e14] text-[#b84f22] dark:text-[#ea8558] border border-[#e8c6b5] dark:border-[#522b1c] flex items-center justify-center shrink-0">
+              <AlertCircle className="w-4 h-4 text-[#b84f22] dark:text-[#ea8558]" />
             </div>
           )}
           {toast.type === 'info' && (
-            <div className="w-8 h-8 rounded-full bg-[#f0e8dc] dark:bg-[#483a2e] text-[#574332] dark:text-[#e2d6c6] border border-[#ded1be] dark:border-[#625040] flex items-center justify-center shrink-0">
-              <Sparkles className="w-4 h-4 text-[#b57a1b] dark:text-[#ecc26b]" />
+            <div className="w-8 h-8 rounded-full bg-[#f1e9dc] dark:bg-[#2c1d15] text-[#23150d] dark:text-[#faf6ee] border border-[#ddd0be] dark:border-[#4e3526] flex items-center justify-center shrink-0">
+              <Sparkles className="w-4 h-4 text-[#0052cc] dark:text-[#2684ff]" />
             </div>
           )}
 
-          <div className="text-xs text-[#211710] dark:text-[#f7f2ea] font-medium leading-snug">
+          <div className="text-xs text-[#23150d] dark:text-[#faf6ee] font-medium leading-snug">
             {toast.message}
           </div>
         </div>

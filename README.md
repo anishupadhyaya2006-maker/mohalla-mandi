@@ -1,4 +1,4 @@
-# Mohalla Mandi (ಮೊಹಲ್ಲಾ ಮಂಡಿ)
+# Mohalla Mitra (ಮೊಹಲ್ಲಾ ಮಿತ್ರ)
 ### Neighbourhood Community Economy Platform for Bengaluru Apartment Societies
 **Startup Prototype · Alliance One 2026: Chaturanga Competition**
 
@@ -7,7 +7,7 @@
 ## Concept
 In Bengaluru, over 12,000 apartment complexes feature high-grade clubhouses, badminton courts, and windy terraces that sit completely empty 85% of weekday hours. Meanwhile, tech employees experience isolation, and local neighbourhood kiranas and filter kaapi counters lose footfall to 10-minute grocery delivery apps.
 
-**Mohalla Mandi** turns idle society spaces into venues for yoga, pottery, sports, and skill-repair workshops, run together with IT companies and startups through inter-company leagues. 
+**Mohalla Mitra** turns idle society spaces into venues for yoga, pottery, sports, and skill-repair workshops, run together with IT companies and startups through inter-company leagues. 
 - **Earn:** Residents join free and earn **Mohalla Mudra (MM)** credits for attending events, consolidating parcel drops to a batched delivery slot, and returning cardboard packaging.
 - **Spend:** Participants spend Mohalla Mudra at local shops, cafés, cobblers, and tailors within 500m of the gate.
 - **Economic Loop:** IT companies sponsor leagues for employee wellness & CSR; local shops sponsor credits in exchange for direct footfall; RWAs monetize idle spaces into maintenance corpus revenue (₹28,500/mo).

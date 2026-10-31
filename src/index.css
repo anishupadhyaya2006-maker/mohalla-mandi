@@ -1,80 +1,94 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
 @layer base {
-  :root {
-    --font-heading: 'Bricolage Grotesque', serif;
-    --font-body: 'Figtree', sans-serif;
-  }
-
   html {
-    font-family: var(--font-body);
-    background-color: #fbf8f4;
-    color: #211710;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #160e09;
+    color: #faf6ee;
+    color-scheme: dark;
   }
 
-  h1, h2, h3, h4, .font-display {
-    font-family: var(--font-heading);
+  html.theme-day {
+    background-color: #faf6ee;
+    color: #23150d;
+    color-scheme: light;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading, .font-display {
+    font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.02em;
   }
 }
 
-/* Light / Day Theme (Primary Default) */
-.theme-day, :root {
-  --bg-page: #fbf8f4;
+/* Night / Dark Theme: Deep Dark Brown (#160e09), Rich Beige (#38251a), Ivory Old (#faf6ee), Electric Atlassian (#2684ff) */
+.theme-night, html.dark, .dark, :root {
+  --bg-page: #160e09;
+  --bg-surface: #221610;
+  --bg-surface-subtle: #1a110b;
+  --bg-surface-elevated: #2c1d15;
+  --border-subtle: #38251a;
+  --border-strong: #4e3526;
+  --text-primary: #faf6ee;
+  --text-secondary: #ddd0be;
+  --text-muted: #9c8574;
+  --accent-atlassian: #2684ff;
+  --accent-atlassian-deep: #0052cc;
+  --accent-atlassian-hover: #4c9aff;
+  --accent-atlassian-light: #0c2340;
+  --accent-dark-brown: #160e09;
+  --accent-beige: #38251a;
+  --accent-ivory: #faf6ee;
+}
+
+/* Light / Day Theme: Ivory Old, Beige, Dark Brown, Deep Atlassian */
+.theme-day {
+  --bg-page: #faf6ee;
   --bg-surface: #ffffff;
-  --bg-surface-subtle: #f6efe3;
-  --bg-surface-elevated: #ede3d1;
-  --border-subtle: #ded1be;
-  --border-strong: #c8b79e;
-  --text-primary: #211710;
-  --text-secondary: #574332;
-  --text-muted: #826e5a;
-  --accent-terracotta: #c85d2e;
-  --accent-terracotta-hover: #b84f22;
-  --accent-ochre: #b57a1b;
-  --accent-brass: #cb922d;
-  --accent-kaapi: #ede2d2;
+  --bg-surface-subtle: #f1e9dc;
+  --bg-surface-elevated: #e8ded0;
+  --border-subtle: #ddd0be;
+  --border-strong: #c4b49f;
+  --text-primary: #23150d;
+  --text-secondary: #4a3528;
+  --text-muted: #755e4e;
+  --accent-atlassian: #0052cc;
+  --accent-atlassian-deep: #0747a6;
+  --accent-atlassian-hover: #003882;
+  --accent-atlassian-light: #deebff;
+  --accent-dark-brown: #23150d;
+  --accent-beige: #e8ded0;
+  --accent-ivory: #faf6ee;
 }
 
-/* Night / Dark Theme (When toggled) */
-.theme-night {
-  --bg-page: #16110d;
-  --bg-surface: #241a13;
-  --bg-surface-subtle: #1c140d;
-  --bg-surface-elevated: #2e2319;
-  --border-subtle: #3c2f24;
-  --border-strong: #483a2e;
-  --text-primary: #f7f2ea;
-  --text-secondary: #cfbea5;
-  --text-muted: #8e7a68;
-  --accent-terracotta: #dc7545;
-  --accent-terracotta-hover: #ea8558;
-  --accent-ochre: #dfaa43;
-  --accent-brass: #ecc26b;
-  --accent-kaapi: #2d2118;
-}
-
-/* Window filament candle/warm amber glow */
+/* Window filament candle/warm Atlassian & Ivory glow */
 @keyframes windowFilament {
   0%, 100% {
-    box-shadow: 0 0 10px rgba(203, 146, 45, 0.45), inset 0 0 7px rgba(253, 238, 201, 0.8);
+    box-shadow: 0 0 10px rgba(0, 82, 204, 0.45), inset 0 0 7px rgba(250, 246, 238, 0.9);
   }
   50% {
-    box-shadow: 0 0 18px rgba(203, 146, 45, 0.75), inset 0 0 11px rgba(253, 238, 201, 0.95);
+    box-shadow: 0 0 18px rgba(38, 132, 255, 0.75), inset 0 0 12px rgba(255, 255, 255, 1);
   }
 }
 
 .window-lit {
-  background: linear-gradient(135deg, #fff7e6 0%, #dfaa43 50%, #cb922d 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #deebff 45%, #0052cc 100%);
   animation: windowFilament 3.2s ease-in-out infinite;
 }
 
 .window-unlit {
-  background: #d8c8b2;
+  background: #d8cdbd;
   opacity: 0.85;
 }
 
 .theme-night .window-unlit {
-  background: #251d16;
+  background: #2a1c14;
   opacity: 0.75;
 }
 
@@ -88,8 +102,8 @@
   }
 }
 
-/* Accessible focus outline in warm ochre/terracotta */
+/* Accessible focus outline in Deep Atlassian */
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
-  outline: 2px solid #c85d2e;
+  outline: 2px solid #0052cc;
   outline-offset: 2px;
 }
